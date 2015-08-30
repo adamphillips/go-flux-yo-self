@@ -10,6 +10,7 @@ var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
+var sourcemaps = require('gulp-sourcemaps');
 
 var projectDir = jetpack;
 var srcDir = projectDir.cwd('./app');
@@ -55,8 +56,10 @@ var browserifyTask = function() {
   return b.bundle()
     .pipe(source('./bundle.js'))
     .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build'));
 }
 
