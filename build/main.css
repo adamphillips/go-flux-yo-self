@@ -1,3 +1,47 @@
-body {
-  background: red;
+.component {
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+}
+.component__view {
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f00000;
+}
+.component__dispatcher {
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #00f000;
+}
+.component__store {
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #0000f0;
+}
+.layer {
+  display: block;
+  clear: both;
+}
+#app-container {
+  display: block;
+}
+#app-log {
+  display: block;
+}
+#app-log table {
+  width: 100%;
+}
+#app-log table tr {
+  border-bottom: 1px solid #d0d0d0;
 }
