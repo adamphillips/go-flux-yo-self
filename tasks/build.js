@@ -7,6 +7,7 @@ var map = require('vinyl-map');
 var jetpack = require('fs-jetpack');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
 
@@ -54,6 +55,7 @@ var browserifyTask = function() {
   return b.bundle()
     .pipe(source('./bundle.js'))
     .pipe(buffer())
+    .pipe(uglify())
     .on('error', gutil.log)
     .pipe(gulp.dest('./build'));
 }
