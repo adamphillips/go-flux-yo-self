@@ -5,8 +5,10 @@ var less = require('gulp-less');
 var babel = require('babel');
 var map = require('vinyl-map');
 var jetpack = require('fs-jetpack');
-
-//var utils = require('./utils');
+var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
+var gutil = require('gulp-util');
 
 var projectDir = jetpack;
 var srcDir = projectDir.cwd('./app');
@@ -42,6 +44,22 @@ var transpileTask = function () {
 gulp.task('transpile', ['clean'], transpileTask);
 gulp.task('transpile-watch', transpileTask);
 
+var browserifyTask = function() {
+  // set up the browserify instance on a task basis
+  var b = browserify({
+   entries: './build/app.js',
+   debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('./bundle.js'))
+    .pipe(buffer())
+    .on('error', gutil.log)
+    .pipe(gulp.dest('./build'));
+}
+
+gulp.task('browserify', ['transpile'], browserifyTask);
+gulp.task('browserify-watch', browserifyTask);
 
 var lessTask = function () {
     return gulp.src('styles/main.less')
@@ -51,4 +69,11 @@ var lessTask = function () {
 gulp.task('less', ['clean'], lessTask);
 gulp.task('less-watch', lessTask);
 
-gulp.task('build', ['transpile', 'less']);
+gulp.task('watch', function () {
+    gulp.watch(paths.jsCodeToTranspile, ['transpile-watch']);
+    gulp.watch(destDir.path('app.js'), ['browserify-watch']);
+    gulp.watch('styles/**/*.less', ['less-watch']);
+});
+
+
+gulp.task('build', ['transpile', 'browserify', 'less']);
