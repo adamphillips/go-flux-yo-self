@@ -2,39 +2,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="./build/main.css" />
-    <script type="text/javascript" src="./build/app.js"></script>
   </head>
   <body>
-    <div id="app-container">
-      <div id="view-layer" class="layer">
-        <div id="output" class="output component__view"></div>
-        <div id="button-1" class="button component__view">Button 1</div>
-        <div id="button-2" class="button component__view">Button 2</div>
-        <div id="button-3" class="button component__view">Button 3</div>
+    <div id="app">
+      <div id="app-container">
       </div>
-      <div id="dispatcher-layer" class="layer">
-        <div id="dispatcher" class="component__dispatcher"></div>
-      </div>
-      <div id="store-layer" class="layer">
-        <div id="output-store" class="component__store"></div>
-        <div id="logger-store" class="component__store"></div>
+      <div id="app-log">
+        <table>
+          <thead>
+            <tr>
+              <td>Type</td>
+              <td>Details</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Action</td>
+              <td>button/clicked</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div id="app-log">
-      <table>
-        <thead>
-          <tr>
-            <td>Type</td>
-            <td>Details</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Action</td>
-            <td>button/clicked</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <script type="text/javascript" src="./build/bundle.js"></script>
   </body>
 </html>
