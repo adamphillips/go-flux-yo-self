@@ -33,7 +33,7 @@ var Layer = (function (_React$Component) {
 
       return _react2['default'].createElement(
         'div',
-        { id: this.props.id, className: 'layer' },
+        { id: this.props.id, className: 'layer clear-fix' },
         this.props.children
       );
     }

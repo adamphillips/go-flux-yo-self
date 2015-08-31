@@ -1,3 +1,35 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+/**
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clear-fix:before,
+.clear-fix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clear-fix:after {
+  clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clear-fix {
+  *zoom: 1;
+}
 .component {
   display: block;
   float: left;
@@ -11,7 +43,17 @@
   width: 200px;
   margin: 20px;
   padding: 10px;
-  background-color: #f00000;
+  background-color: #d93e30;
+}
+.message-bar {
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #d93e30;
+  width: auto;
+  float: none;
 }
 .component__dispatcher {
   display: block;
@@ -32,16 +74,40 @@
 .layer {
   display: block;
   clear: both;
+  margin: 12px;
+}
+#view-layer {
+  background-color: #d93e30;
+}
+#dispatcher-layer {
+  background-color: #f2a71b;
+}
+#store-layer {
+  background-color: #81a6a2;
 }
 #app-container {
+  background-color: #0b3140;
   display: block;
+  padding: 12px;
+  margin: 0px;
 }
 #app-log {
   display: block;
+  background-color: #0b3140;
 }
 #app-log table {
   width: 100%;
 }
-#app-log table tr {
-  border-bottom: 1px solid #d0d0d0;
+#app-log table tr:nth-child(2n+1) {
+  background-color: #e0e0e0;
+}
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #0b3140;
+}
+#app {
+  margin: 0px;
+  padding: 0px;
 }

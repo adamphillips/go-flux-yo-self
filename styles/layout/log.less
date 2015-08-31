@@ -1,11 +1,14 @@
+@import '../colours';
+
 #app-log {
   display: block;
+  background-color: @app-log-bg;
 
   table {
     width: 100%;
 
-    tr {
-      border-bottom: 1px solid @light_grey;
+    tr:nth-child(2n+1) {
+      background-color: @light_grey;
     }
   }
 }
