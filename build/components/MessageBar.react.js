@@ -39,6 +39,11 @@ var MessageBar = (function (_React$Component) {
       return _react2['default'].createElement(
         'div',
         { id: this.props.id, className: 'message-bar component__view' },
+        _react2['default'].createElement(
+          'span',
+          { className: 'source' },
+          'Source: OutputStore'
+        ),
         this.state.message
       );
     }

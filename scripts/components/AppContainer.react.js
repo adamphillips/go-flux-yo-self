@@ -24,8 +24,18 @@ export default class AppContainer extends React.Component<{}, Props, State> {
           <Dispatcher id="dispatcher">Dispatcher</Dispatcher>
         </Layer>
         <Layer id="store-layer">
-          <Store id="output-store">Output Store</Store>
-          <Store id="logger-store">Logger Store</Store>
+          <Store id="output-store">
+            Output Store
+            <p className="store__description">
+              The output store contains the message to be displayed.
+            </p>
+          </Store>
+          <Store id="logger-store">Logger Store
+            <p className="store__description">
+              The Logger Store contains the log of the last 10 actions.
+              This is the source used for the data table.
+            </p>
+          </Store>
         </Layer>
       </div>
     )

@@ -3,4 +3,23 @@
 .component__dispatcher {
   .component;
   background-color: @yellow;
+  position: relative;
+
+  .dispatcher__description {
+    .smaller_text;
+    position: absolute;
+    background-color: fade(@yellow, 95%);
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    border: @spacing solid rgba(0, 0, 0, 0.1);
+    padding: @spacing;
+    display: none;
+    z-index: 100;
+  }
+
+  &:hover .dispatcher__description {
+    display: block;
+  }
 }

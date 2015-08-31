@@ -33,7 +33,12 @@ var Dispatcher = (function (_React$Component) {
       return _react2['default'].createElement(
         'div',
         { id: this.props.id, className: 'component__dispatcher' },
-        this.props.children
+        this.props.children,
+        _react2['default'].createElement(
+          'p',
+          { className: 'dispatcher__description' },
+          'Each button click dispatches an event against the dispatcher. The dispatcher in turn notifies the stores who can decide if they are interested.'
+        )
       );
     }
   }]);

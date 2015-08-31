@@ -3,4 +3,22 @@
 .component__store {
   .component;
   background-color: @light-blue;
+  position: relative;
+
+  .store__description {
+    .smaller_text;
+    position: absolute;
+    background-color: fade(@light-blue, 95%);
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    border: @spacing solid rgba(0, 0, 0, 0.1);
+    padding: @spacing;
+    display: none;
+  }
+
+  &:hover .store__description {
+    display: block;
+  }
 }

@@ -92,12 +92,22 @@ var AppContainer = (function (_React$Component) {
           _react2['default'].createElement(
             _StoreReact2['default'],
             { id: 'output-store' },
-            'Output Store'
+            'Output Store',
+            _react2['default'].createElement(
+              'p',
+              { className: 'store__description' },
+              'The output store contains the message to be displayed.'
+            )
           ),
           _react2['default'].createElement(
             _StoreReact2['default'],
             { id: 'logger-store' },
-            'Logger Store'
+            'Logger Store',
+            _react2['default'].createElement(
+              'p',
+              { className: 'store__description' },
+              'The Logger Store contains the log of the last 10 actions. This is the source used for the data table.'
+            )
           )
         )
       );

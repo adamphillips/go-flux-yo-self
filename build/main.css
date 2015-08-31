@@ -1,6 +1,18 @@
+h1 {
+  font-weight: 300;
+  color: #f0ecda;
+  text-align: center;
+  font-size: 3em;
+  border-bottom: 1px solid #f0ecda;
+  margin: 0px;
+  padding: 0px;
+}
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+}
+.smaller_text {
+  font-size: 0.8em;
 }
 /**
  * http://nicolasgallagher.com/micro-clearfix-hack/
@@ -32,21 +44,37 @@ body {
 }
 .component {
   display: inline-block;
-  width: 200px;
+  width: 25%;
   margin: 20px;
   padding: 10px;
 }
 .component__view {
   display: inline-block;
-  width: 200px;
+  width: 25%;
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
   border: none;
+  position: relative;
+}
+.component__view .button__description {
+  position: absolute;
+  background-color: rgba(217, 62, 48, 0.95);
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+  z-index: 100;
+}
+.component__view:hover .button__description {
+  display: block;
 }
 .message-bar {
   display: inline-block;
-  width: 200px;
+  width: 25%;
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
@@ -55,20 +83,85 @@ body {
   background-color: #f0ecda;
   display: block;
   text-align: center;
+  position: relative;
+}
+.message-bar .button__description {
+  position: absolute;
+  background-color: rgba(217, 62, 48, 0.95);
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+  z-index: 100;
+}
+.message-bar:hover .button__description {
+  display: block;
+}
+.message-bar span.source {
+  background-color: #81a6a2;
+  clear: both;
+  display: none;
+  float: left;
+  font-size: 0.8em;
+  width: auto;
+  padding: 3px;
+  margin: 0px auto;
+  color: #f0ecda;
+  position: absolute;
+  left: 12px;
+}
+.message-bar:hover span.source {
+  display: block;
 }
 .component__dispatcher {
   display: inline-block;
-  width: 200px;
+  width: 25%;
   margin: 20px;
   padding: 10px;
   background-color: #f2a71b;
+  position: relative;
+}
+.component__dispatcher .dispatcher__description {
+  font-size: 0.8em;
+  position: absolute;
+  background-color: rgba(242, 167, 27, 0.95);
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+  z-index: 100;
+}
+.component__dispatcher:hover .dispatcher__description {
+  display: block;
 }
 .component__store {
   display: inline-block;
-  width: 200px;
+  width: 25%;
   margin: 20px;
   padding: 10px;
   background-color: #81a6a2;
+  position: relative;
+}
+.component__store .store__description {
+  font-size: 0.8em;
+  position: absolute;
+  background-color: rgba(129, 166, 162, 0.95);
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+}
+.component__store:hover .store__description {
+  display: block;
 }
 .layer {
   display: block;
@@ -91,11 +184,8 @@ body {
   padding: 12px;
   margin: 0px;
 }
-#app-container .button-container {
-  margin: 0px auto;
-  width: 720px;
-}
 #app-log {
+  font-size: 0.8em;
   display: block;
   background-color: #0b3140;
 }
@@ -105,13 +195,13 @@ body {
 }
 #app-log table thead tr {
   background-color: rgba(129, 166, 162, 0.3);
-  color: white;
+  color: #f0ecda;
 }
 #app-log table tr {
   background-color: #81a6a2;
 }
 #app-log table tr:nth-child(2n) {
-  background-color: #e0e0e0;
+  background-color: #f0ecda;
 }
 #app-log table td {
   margin: 0px;
@@ -122,6 +212,10 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: #0b3140;
+}
+.summary {
+  color: #f0ecda;
+  text-align: center;
 }
 #app {
   margin: 0px;

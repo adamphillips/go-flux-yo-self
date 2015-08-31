@@ -7,4 +7,23 @@
   background-color: @white;
   display: block;
   text-align: center;
+  position: relative;
+
+  span.source {
+    background-color: @light-blue;
+    clear: both;
+    display: none;
+    float: left;
+    font-size: 0.8em;
+    width: auto;
+    padding: @spacing / 4;
+    margin: 0px auto;
+    color: @white;
+    position: absolute;
+    left: @spacing;
+  }
+
+  &:hover span.source {
+    display: block;
+  }
 }

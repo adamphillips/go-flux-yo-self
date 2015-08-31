@@ -27,6 +27,10 @@ var OutputStore = (function (_ReduceStore) {
     _classCallCheck(this, OutputStore);
 
     _get(Object.getPrototypeOf(OutputStore.prototype), 'constructor', this).apply(this, arguments);
+
+    this.messageForButton = function (id) {
+      return 'You have clicked ' + id.replace('-', ' ');
+    };
   }
 
   _createClass(OutputStore, [{
@@ -39,7 +43,7 @@ var OutputStore = (function (_ReduceStore) {
     value: function reduce(state, action) {
       switch (action.type) {
         case 'button/clicked':
-          state = action.id;
+          state = this.messageForButton(action.id);
           return state;
 
         default:

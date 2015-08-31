@@ -19,6 +19,7 @@ export class MessageBar extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
     return (
       <div id={this.props.id} className="message-bar component__view">
+        <span className="source">Source: OutputStore</span>
         {this.state.message}
       </div>
     )

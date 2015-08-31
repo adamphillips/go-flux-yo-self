@@ -1,6 +1,7 @@
 @import '../colours';
 
 #app-log {
+  .smaller_text;
   display: block;
   background-color: @app-log-bg;
 
@@ -10,7 +11,7 @@
 
     thead tr {
       background-color: fade(@light-blue, 30%);
-      color: white;
+      color: @white;
     }
 
     tr {
@@ -18,7 +19,7 @@
     }
 
     tr:nth-child(2n) {
-      background-color: @light_grey;
+      background-color: @white;
     }
 
     td {
