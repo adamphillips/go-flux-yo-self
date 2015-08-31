@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { dispatch } from '../flux/Dispatcher';
+import ClickedButton from '../flux/ClickedButton';
 
 export default class Button extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
@@ -18,9 +18,6 @@ export default class Button extends React.Component<{}, Props, State> {
   }
 
   onButtonClick = () => {
-    dispatch({
-      type: 'button/clicked',
-      id: this.props.id
-    })
+    new ClickedButton(this.props.id).click();
   }
 }

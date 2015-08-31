@@ -1,5 +1,6 @@
 'use strict';
 
+import ActionTypes from './ActionTypes';
 import type {Action} from './Actions';
 import Dispatcher from './Dispatcher';
 
@@ -12,7 +13,7 @@ export class OutputStore extends ReduceStore<string> {
 
   reduce(state: string, action: Action): string {
     switch(action.type) {
-      case 'button/clicked':
+      case ActionTypes.BUTTON_CLICKED:
         state = this.messageForButton(action.id);
         return state;
 

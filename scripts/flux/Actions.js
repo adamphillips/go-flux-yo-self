@@ -1,7 +1,9 @@
 'use strict';
 
+import ActionTypes from './ActionTypes';
+
 export type Action =
   {
-    type: 'button/clicked',
+    type: ActionTypes.BUTTON_CLICKED,
     id: string,
   };

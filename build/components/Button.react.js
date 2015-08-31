@@ -18,7 +18,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fluxDispatcher = require('../flux/Dispatcher');
+var _fluxClickedButton = require('../flux/ClickedButton');
+
+var _fluxClickedButton2 = _interopRequireDefault(_fluxClickedButton);
 
 var Button = (function (_React$Component) {
   _inherits(Button, _React$Component);
@@ -31,10 +33,7 @@ var Button = (function (_React$Component) {
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
     this.onButtonClick = function () {
-      (0, _fluxDispatcher.dispatch)({
-        type: 'button/clicked',
-        id: _this.props.id
-      });
+      new _fluxClickedButton2['default'](_this.props.id).click();
     };
   }
 
