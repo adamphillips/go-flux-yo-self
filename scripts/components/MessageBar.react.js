@@ -1,25 +1,25 @@
 'use strict';
 
 import React from 'react';
-import OutputStore from '../flux/OutputStore';
+import MessageStore from '../flux/MessageStore';
 
 var Container = require('flux/utils').Container;
 
 export class MessageBar extends React.Component<{}, Props, State> {
   static getStores(): Array<Store> {
-    return [OutputStore];
+    return [MessageStore];
   }
 
   static calculateState(prevState: ?State): State {
     return {
-      message: OutputStore.getState(),
+      message: MessageStore.getState(),
     }
   }
 
   render() : ?ReactElement {
     return (
       <div id={this.props.id} className="message-bar component__view">
-        <span className="source">Source: OutputStore</span>
+        <span className="source">Source: MessageStore</span>
         {this.state.message}
       </div>
     )

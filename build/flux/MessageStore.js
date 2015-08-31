@@ -14,65 +14,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _react = require('react');
+var _ActionTypes = require('./ActionTypes');
 
-var _react2 = _interopRequireDefault(_react);
+var _ActionTypes2 = _interopRequireDefault(_ActionTypes);
 
-var _fluxClickedButton = require('../flux/ClickedButton');
+var _Dispatcher = require('./Dispatcher');
 
-var _fluxClickedButton2 = _interopRequireDefault(_fluxClickedButton);
+var _Dispatcher2 = _interopRequireDefault(_Dispatcher);
 
-var Button = (function (_React$Component) {
-  _inherits(Button, _React$Component);
+var ReduceStore = require('flux/utils').ReduceStore;
 
-  function Button() {
-    var _this = this;
+var MessageStore = (function (_ReduceStore) {
+  _inherits(MessageStore, _ReduceStore);
 
-    _classCallCheck(this, Button);
+  function MessageStore() {
+    _classCallCheck(this, MessageStore);
 
-    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(MessageStore.prototype), 'constructor', this).apply(this, arguments);
 
-    this.onButtonClick = function () {
-      new _fluxClickedButton2['default'](_this.props.id).click();
+    this.messageForButton = function (id) {
+      return 'You have clicked ' + id.replace('-', ' ');
     };
   }
 
-  _createClass(Button, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'button',
-        { id: this.props.id, className: 'button component__view', onClick: this.onButtonClick },
-        this.props.children,
-        _react2['default'].createElement(
-          'p',
-          { className: 'button__description' },
-          'When clicked, each button will create an instance of the ',
-          _react2['default'].createElement(
-            'a',
-            null,
-            'ClickedButton'
-          ),
-          ' ActionCreator. This in turn ',
-          _react2['default'].createElement(
-            'a',
-            null,
-            'creates and dispatches'
-          ),
-          ' the action.',
-          _react2['default'].createElement(
-            'a',
-            null,
-            'The action'
-          ),
-          ' contains a type and id but could contain any other relevant information.'
-        )
-      );
+  _createClass(MessageStore, [{
+    key: 'getInitialState',
+    value: function getInitialState() {
+      return 'Test message';
+    }
+  }, {
+    key: 'reduce',
+    value: function reduce(state, action) {
+      switch (action.type) {
+        case _ActionTypes2['default'].BUTTON_CLICKED:
+          state = this.messageForButton(action.id);
+          return state;
+
+        default:
+          return state;
+      }
     }
   }]);
 
-  return Button;
-})(_react2['default'].Component);
+  return MessageStore;
+})(ReduceStore);
 
-exports['default'] = Button;
-module.exports = exports['default'];
+exports.MessageStore = MessageStore;
+
+var instance = new MessageStore(_Dispatcher2['default']);
+exports['default'] = instance;

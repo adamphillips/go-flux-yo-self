@@ -63,7 +63,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   left: 0;
-  top: 100%;
+  bottom: -100%;
   border: 12px solid rgba(0, 0, 0, 0.1);
   padding: 12px;
   display: none;
@@ -91,7 +91,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   left: 0;
-  top: 100%;
+  bottom: -100%;
   border: 12px solid rgba(0, 0, 0, 0.1);
   padding: 12px;
   display: none;
@@ -131,7 +131,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   left: 0;
-  top: 100%;
+  bottom: -100%;
   border: 12px solid rgba(0, 0, 0, 0.1);
   padding: 12px;
   display: none;
@@ -155,7 +155,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   left: 0;
-  top: 100%;
+  bottom: -100%;
   border: 12px solid rgba(0, 0, 0, 0.1);
   padding: 12px;
   display: none;

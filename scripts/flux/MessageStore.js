@@ -6,7 +6,7 @@ import Dispatcher from './Dispatcher';
 
 var ReduceStore = require('flux/utils').ReduceStore;
 
-export class OutputStore extends ReduceStore<string> {
+export class MessageStore extends ReduceStore<string> {
   getInitialState(): string {
     return 'Test message';
   }
@@ -27,5 +27,5 @@ export class OutputStore extends ReduceStore<string> {
   }
 }
 
-const instance = new OutputStore(Dispatcher);
+const instance = new MessageStore(Dispatcher);
 export default instance;

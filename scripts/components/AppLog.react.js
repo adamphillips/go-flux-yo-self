@@ -2,7 +2,6 @@
 
 import React from 'react';
 import LoggerStore from '../flux/LoggerStore';
-import OutputStore from '../flux/OutputStore';
 
 var Container = require('flux/utils').Container;
 
@@ -20,7 +19,6 @@ export class AppLog extends React.Component<{}, Props, State> {
 
   render() : ?ReactElement {
     const results = [];
-    console.log(this.state);
     for (var x in this.state.log) {
       var entry = this.state.log[x];
       results.push(

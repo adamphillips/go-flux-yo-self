@@ -22,10 +22,6 @@ var _fluxLoggerStore = require('../flux/LoggerStore');
 
 var _fluxLoggerStore2 = _interopRequireDefault(_fluxLoggerStore);
 
-var _fluxOutputStore = require('../flux/OutputStore');
-
-var _fluxOutputStore2 = _interopRequireDefault(_fluxOutputStore);
-
 var Container = require('flux/utils').Container;
 
 var AppLog = (function (_React$Component) {
@@ -41,7 +37,6 @@ var AppLog = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var results = [];
-      console.log(this.state);
       for (var x in this.state.log) {
         var entry = this.state.log[x];
         results.push(_react2['default'].createElement(

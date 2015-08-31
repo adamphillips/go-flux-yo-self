@@ -18,9 +18,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fluxOutputStore = require('../flux/OutputStore');
+var _fluxMessageStore = require('../flux/MessageStore');
 
-var _fluxOutputStore2 = _interopRequireDefault(_fluxOutputStore);
+var _fluxMessageStore2 = _interopRequireDefault(_fluxMessageStore);
 
 var Container = require('flux/utils').Container;
 
@@ -42,7 +42,7 @@ var MessageBar = (function (_React$Component) {
         _react2['default'].createElement(
           'span',
           { className: 'source' },
-          'Source: OutputStore'
+          'Source: MessageStore'
         ),
         this.state.message
       );
@@ -50,13 +50,13 @@ var MessageBar = (function (_React$Component) {
   }], [{
     key: 'getStores',
     value: function getStores() {
-      return [_fluxOutputStore2['default']];
+      return [_fluxMessageStore2['default']];
     }
   }, {
     key: 'calculateState',
     value: function calculateState(prevState) {
       return {
-        message: _fluxOutputStore2['default'].getState()
+        message: _fluxMessageStore2['default'].getState()
       };
     }
   }]);

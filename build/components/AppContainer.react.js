@@ -91,22 +91,34 @@ var AppContainer = (function (_React$Component) {
           { id: 'store-layer' },
           _react2['default'].createElement(
             _StoreReact2['default'],
-            { id: 'output-store' },
-            'Output Store',
+            { id: 'message-store' },
+            'Message Store',
             _react2['default'].createElement(
               'p',
               { className: 'store__description' },
-              'The output store contains the message to be displayed.'
+              'The MessageStore contains the message to be displayed in the bar at top. The MessageBar React component ',
+              _react2['default'].createElement(
+                'a',
+                null,
+                'registers its state'
+              ),
+              ' as being bound to the MessageStore.'
             )
           ),
           _react2['default'].createElement(
             _StoreReact2['default'],
             { id: 'logger-store' },
-            'Logger Store',
+            'LoggerStore',
             _react2['default'].createElement(
               'p',
               { className: 'store__description' },
-              'The Logger Store contains the log of the last 10 actions. This is the source used for the data table.'
+              'The LoggerStore contains the log of the last 10 actions. This is the source used for the data table. The AppLog React component ',
+              _react2['default'].createElement(
+                'a',
+                null,
+                'registers its state'
+              ),
+              ' as being bound to the LoggerStore.'
             )
           )
         )
