@@ -22,6 +22,10 @@ var _LayerReact = require('./Layer.react');
 
 var _LayerReact2 = _interopRequireDefault(_LayerReact);
 
+var _MessageBarReact = require('./MessageBar.react');
+
+var _MessageBarReact2 = _interopRequireDefault(_MessageBarReact);
+
 var _ButtonReact = require('./Button.react');
 
 var _ButtonReact2 = _interopRequireDefault(_ButtonReact);
@@ -52,7 +56,7 @@ var AppContainer = (function (_React$Component) {
         _react2['default'].createElement(
           _LayerReact2['default'],
           { id: 'view-layer' },
-          _react2['default'].createElement('div', { id: 'output', className: 'output component__view' }),
+          _react2['default'].createElement(_MessageBarReact2['default'], { id: 'message-bar' }),
           _react2['default'].createElement(
             _ButtonReact2['default'],
             { id: 'button-1' },

@@ -14,41 +14,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _react = require('react');
+var _Dispatcher = require('./Dispatcher');
 
-var _react2 = _interopRequireDefault(_react);
+var _Dispatcher2 = _interopRequireDefault(_Dispatcher);
 
-var _AppContainerReact = require('./AppContainer.react');
+var _LogEntry = require('./LogEntry');
 
-var _AppContainerReact2 = _interopRequireDefault(_AppContainerReact);
+var _LogEntry2 = _interopRequireDefault(_LogEntry);
 
-var _AppLogReact = require('./AppLog.react');
+var ReduceStore = require('flux/utils').ReduceStore;
 
-var _AppLogReact2 = _interopRequireDefault(_AppLogReact);
+var LoggerStore = (function (_ReduceStore) {
+  _inherits(LoggerStore, _ReduceStore);
 
-var App = (function (_React$Component) {
-  _inherits(App, _React$Component);
+  function LoggerStore() {
+    _classCallCheck(this, LoggerStore);
 
-  function App() {
-    _classCallCheck(this, App);
-
-    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(LoggerStore.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'div',
-        null,
-        _react2['default'].createElement(_AppContainerReact2['default'], null),
-        _react2['default'].createElement(_AppLogReact2['default'], { id: 'app-log' })
-      );
+  _createClass(LoggerStore, [{
+    key: 'getInitialState',
+    value: function getInitialState() {
+      return [new _LogEntry2['default']('unkown', 'started')];
+    }
+  }, {
+    key: 'reduce',
+    value: function reduce(state, action) {
+      var entry = new _LogEntry2['default'](action.id, action.type);
+      var new_state = state.slice(0, 10);
+      new_state.unshift(entry);
+      return new_state;
     }
   }]);
 
-  return App;
-})(_react2['default'].Component);
+  return LoggerStore;
+})(ReduceStore);
 
-exports['default'] = App;
-module.exports = exports['default'];
+exports.LoggerStore = LoggerStore;
+
+var instance = new LoggerStore(_Dispatcher2['default']);
+exports['default'] = instance;

@@ -18,13 +18,24 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _fluxDispatcher = require('../flux/Dispatcher');
+
 var Button = (function (_React$Component) {
   _inherits(Button, _React$Component);
 
   function Button() {
+    var _this = this;
+
     _classCallCheck(this, Button);
 
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
+
+    this.onButtonClick = function () {
+      (0, _fluxDispatcher.dispatch)({
+        type: 'button/clicked',
+        id: _this.props.id
+      });
+    };
   }
 
   _createClass(Button, [{
@@ -32,7 +43,7 @@ var Button = (function (_React$Component) {
     value: function render() {
       return _react2['default'].createElement(
         'button',
-        { id: this.props.id, className: 'button component__view' },
+        { id: this.props.id, className: 'button component__view', onClick: this.onButtonClick },
         this.props.children
       );
     }

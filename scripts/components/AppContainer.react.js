@@ -3,6 +3,7 @@
 import React from 'react';
 
 import Layer from './Layer.react';
+import MessageBar from './MessageBar.react';
 import Button from './Button.react';
 import Dispatcher from './Dispatcher.react';
 import Store from './Store.react';
@@ -12,7 +13,7 @@ export default class AppContainer extends React.Component<{}, Props, State> {
     return (
       <div id="app-container">
         <Layer id="view-layer">
-          <div id="output" className="output component__view"></div>
+          <MessageBar id="message-bar"></MessageBar>
           <Button id="button-1">Button 1</Button>
           <Button id="button-2">Button 2</Button>
           <Button id="button-3">Button 3</Button>

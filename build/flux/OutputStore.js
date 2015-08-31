@@ -14,41 +14,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _react = require('react');
+var _Dispatcher = require('./Dispatcher');
 
-var _react2 = _interopRequireDefault(_react);
+var _Dispatcher2 = _interopRequireDefault(_Dispatcher);
 
-var _AppContainerReact = require('./AppContainer.react');
+var ReduceStore = require('flux/utils').ReduceStore;
 
-var _AppContainerReact2 = _interopRequireDefault(_AppContainerReact);
+var OutputStore = (function (_ReduceStore) {
+  _inherits(OutputStore, _ReduceStore);
 
-var _AppLogReact = require('./AppLog.react');
+  function OutputStore() {
+    _classCallCheck(this, OutputStore);
 
-var _AppLogReact2 = _interopRequireDefault(_AppLogReact);
-
-var App = (function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(OutputStore.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'div',
-        null,
-        _react2['default'].createElement(_AppContainerReact2['default'], null),
-        _react2['default'].createElement(_AppLogReact2['default'], { id: 'app-log' })
-      );
+  _createClass(OutputStore, [{
+    key: 'getInitialState',
+    value: function getInitialState() {
+      return 'Test message';
+    }
+  }, {
+    key: 'reduce',
+    value: function reduce(state, action) {
+      switch (action.type) {
+        case 'button/clicked':
+          state = action.id;
+          return state;
+
+        default:
+          return state;
+      }
     }
   }]);
 
-  return App;
-})(_react2['default'].Component);
+  return OutputStore;
+})(ReduceStore);
 
-exports['default'] = App;
-module.exports = exports['default'];
+exports.OutputStore = OutputStore;
+
+var instance = new OutputStore(_Dispatcher2['default']);
+exports['default'] = instance;

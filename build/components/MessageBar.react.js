@@ -18,37 +18,48 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _AppContainerReact = require('./AppContainer.react');
+var _fluxOutputStore = require('../flux/OutputStore');
 
-var _AppContainerReact2 = _interopRequireDefault(_AppContainerReact);
+var _fluxOutputStore2 = _interopRequireDefault(_fluxOutputStore);
 
-var _AppLogReact = require('./AppLog.react');
+var Container = require('flux/utils').Container;
 
-var _AppLogReact2 = _interopRequireDefault(_AppLogReact);
+var MessageBar = (function (_React$Component) {
+  _inherits(MessageBar, _React$Component);
 
-var App = (function (_React$Component) {
-  _inherits(App, _React$Component);
+  function MessageBar() {
+    _classCallCheck(this, MessageBar);
 
-  function App() {
-    _classCallCheck(this, App);
-
-    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(MessageBar.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(App, [{
+  _createClass(MessageBar, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(
         'div',
-        null,
-        _react2['default'].createElement(_AppContainerReact2['default'], null),
-        _react2['default'].createElement(_AppLogReact2['default'], { id: 'app-log' })
+        { id: this.props.id, className: 'message-bar component__view' },
+        this.state.message
       );
+    }
+  }], [{
+    key: 'getStores',
+    value: function getStores() {
+      return [_fluxOutputStore2['default']];
+    }
+  }, {
+    key: 'calculateState',
+    value: function calculateState(prevState) {
+      return {
+        message: _fluxOutputStore2['default'].getState()
+      };
     }
   }]);
 
-  return App;
+  return MessageBar;
 })(_react2['default'].Component);
 
-exports['default'] = App;
-module.exports = exports['default'];
+exports.MessageBar = MessageBar;
+
+var ContainedMessageBar = Container.create(MessageBar);
+exports['default'] = ContainedMessageBar;

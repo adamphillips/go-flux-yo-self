@@ -10,7 +10,7 @@ export default class App extends React.Component<{}, Props, State> {
     return (
       <div>
         <AppContainer />
-        <AppLog />
+        <AppLog id="app-log" />
       </div>
     )
   }

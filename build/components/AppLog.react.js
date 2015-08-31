@@ -18,6 +18,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _fluxLoggerStore = require('../flux/LoggerStore');
+
+var _fluxLoggerStore2 = _interopRequireDefault(_fluxLoggerStore);
+
+var _fluxOutputStore = require('../flux/OutputStore');
+
+var _fluxOutputStore2 = _interopRequireDefault(_fluxOutputStore);
+
+var Container = require('flux/utils').Container;
+
 var AppLog = (function (_React$Component) {
   _inherits(AppLog, _React$Component);
 
@@ -30,9 +40,29 @@ var AppLog = (function (_React$Component) {
   _createClass(AppLog, [{
     key: 'render',
     value: function render() {
+      var results = [];
+      console.log(this.state);
+      for (var x in this.state.log) {
+        var entry = this.state.log[x];
+        results.push(_react2['default'].createElement(
+          'tr',
+          { key: x },
+          _react2['default'].createElement(
+            'td',
+            null,
+            entry.type
+          ),
+          _react2['default'].createElement(
+            'td',
+            null,
+            entry.description
+          )
+        ));
+      }
+
       return _react2['default'].createElement(
         'div',
-        { id: 'app-log' },
+        { id: this.props.id },
         _react2['default'].createElement(
           'table',
           null,
@@ -53,14 +83,34 @@ var AppLog = (function (_React$Component) {
                 'Log'
               )
             )
+          ),
+          _react2['default'].createElement(
+            'tbody',
+            null,
+            results
           )
         )
       );
+    }
+  }], [{
+    key: 'getStores',
+    value: function getStores() {
+      return [_fluxLoggerStore2['default']];
+    }
+  }, {
+    key: 'calculateState',
+    value: function calculateState(prevState) {
+      console.log('checking state');
+      return {
+        log: _fluxLoggerStore2['default'].getState()
+      };
     }
   }]);
 
   return AppLog;
 })(_react2['default'].Component);
 
-exports['default'] = AppLog;
-module.exports = exports['default'];
+exports.AppLog = AppLog;
+
+var contained = Container.create(AppLog);
+exports['default'] = contained;
