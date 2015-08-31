@@ -6,9 +6,24 @@
 
   table {
     width: 100%;
+    padding: 2 * @spacing;
 
-    tr:nth-child(2n+1) {
+    thead tr {
+      background-color: fade(@light-blue, 30%);
+      color: white;
+    }
+
+    tr {
+      background-color: @light-blue;
+    }
+
+    tr:nth-child(2n) {
       background-color: @light_grey;
+    }
+
+    td {
+      margin: 0px;
+      padding: @spacing / 2;
     }
   }
 }

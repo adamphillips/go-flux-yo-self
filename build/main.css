@@ -42,6 +42,7 @@ body {
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
+  border: none;
 }
 .message-bar {
   display: inline-block;
@@ -49,6 +50,7 @@ body {
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
+  border: none;
   width: auto;
   background-color: #f0ecda;
   display: block;
@@ -59,14 +61,14 @@ body {
   width: 200px;
   margin: 20px;
   padding: 10px;
-  background-color: #00f000;
+  background-color: #f2a71b;
 }
 .component__store {
   display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
-  background-color: #0000f0;
+  background-color: #81a6a2;
 }
 .layer {
   display: block;
@@ -75,13 +77,13 @@ body {
   text-align: center;
 }
 #view-layer {
-  background-color: #d93e30;
+  background-color: rgba(217, 62, 48, 0.3);
 }
 #dispatcher-layer {
-  background-color: #f2a71b;
+  background-color: rgba(242, 167, 27, 0.3);
 }
 #store-layer {
-  background-color: #81a6a2;
+  background-color: rgba(129, 166, 162, 0.3);
 }
 #app-container {
   background-color: #0b3140;
@@ -99,9 +101,21 @@ body {
 }
 #app-log table {
   width: 100%;
+  padding: 24px;
 }
-#app-log table tr:nth-child(2n+1) {
+#app-log table thead tr {
+  background-color: rgba(129, 166, 162, 0.3);
+  color: white;
+}
+#app-log table tr {
+  background-color: #81a6a2;
+}
+#app-log table tr:nth-child(2n) {
   background-color: #e0e0e0;
+}
+#app-log table td {
+  margin: 0px;
+  padding: 6px;
 }
 html,
 body {
