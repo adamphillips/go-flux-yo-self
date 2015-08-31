@@ -14,9 +14,11 @@ export default class AppContainer extends React.Component<{}, Props, State> {
       <div id="app-container">
         <Layer id="view-layer">
           <MessageBar id="message-bar"></MessageBar>
-          <Button id="button-1">Button 1</Button>
-          <Button id="button-2">Button 2</Button>
-          <Button id="button-3">Button 3</Button>
+          <div className="button-container">
+            <Button id="button-1">Button 1</Button>
+            <Button id="button-2">Button 2</Button>
+            <Button id="button-3">Button 3</Button>
+          </div>
         </Layer>
         <Layer id="dispatcher-layer">
           <Dispatcher id="dispatcher">Dispatcher</Dispatcher>

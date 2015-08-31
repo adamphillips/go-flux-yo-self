@@ -58,19 +58,23 @@ var AppContainer = (function (_React$Component) {
           { id: 'view-layer' },
           _react2['default'].createElement(_MessageBarReact2['default'], { id: 'message-bar' }),
           _react2['default'].createElement(
-            _ButtonReact2['default'],
-            { id: 'button-1' },
-            'Button 1'
-          ),
-          _react2['default'].createElement(
-            _ButtonReact2['default'],
-            { id: 'button-2' },
-            'Button 2'
-          ),
-          _react2['default'].createElement(
-            _ButtonReact2['default'],
-            { id: 'button-3' },
-            'Button 3'
+            'div',
+            { className: 'button-container' },
+            _react2['default'].createElement(
+              _ButtonReact2['default'],
+              { id: 'button-1' },
+              'Button 1'
+            ),
+            _react2['default'].createElement(
+              _ButtonReact2['default'],
+              { id: 'button-2' },
+              'Button 2'
+            ),
+            _react2['default'].createElement(
+              _ButtonReact2['default'],
+              { id: 'button-3' },
+              'Button 3'
+            )
           )
         ),
         _react2['default'].createElement(

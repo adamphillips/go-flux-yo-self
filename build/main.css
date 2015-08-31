@@ -31,41 +31,38 @@ body {
   *zoom: 1;
 }
 .component {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
 }
 .component__view {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
 }
 .message-bar {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
   background-color: #d93e30;
   width: auto;
-  float: none;
+  background-color: #f0ecda;
+  display: block;
+  text-align: center;
 }
 .component__dispatcher {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
   background-color: #00f000;
 }
 .component__store {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
   margin: 20px;
   padding: 10px;
@@ -75,6 +72,7 @@ body {
   display: block;
   clear: both;
   margin: 12px;
+  text-align: center;
 }
 #view-layer {
   background-color: #d93e30;
@@ -90,6 +88,10 @@ body {
   display: block;
   padding: 12px;
   margin: 0px;
+}
+#app-container .button-container {
+  margin: 0px auto;
+  width: 720px;
 }
 #app-log {
   display: block;
