@@ -76,7 +76,7 @@ var AppContainer = (function (_React$Component) {
             ),
             _react2['default'].createElement(
               _ButtonReact2['default'],
-              { id: 'button-3' },
+              { id: 'button-3', delay: 'true' },
               'Button 3'
             )
           )
@@ -88,6 +88,11 @@ var AppContainer = (function (_React$Component) {
             _ActionCreatorReact2['default'],
             { id: 'update-message-action-creator' },
             'UpdateMessage Action Creator'
+          ),
+          _react2['default'].createElement(
+            _ActionCreatorReact2['default'],
+            { id: 'delayed-update-message-action-creator' },
+            'DelayedUpdateMessage Action Creator'
           )
         ),
         _react2['default'].createElement(

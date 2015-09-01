@@ -37,8 +37,7 @@ var Button = (function (_React$Component) {
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
     this.onButtonClick = function () {
-      var updater = new _fluxDelayedUpdateMessage2['default']();
-      updater.run(_this.message);
+      _this.actionCreator.run(_this.message);
     };
   }
 
@@ -53,11 +52,7 @@ var Button = (function (_React$Component) {
           'p',
           { className: 'button__description' },
           'When clicked, each button will create an instance of the ',
-          _react2['default'].createElement(
-            'a',
-            null,
-            'ClickedButton'
-          ),
+          this.actionCreatorType,
           ' ActionCreator. This in turn ',
           _react2['default'].createElement(
             'a',
@@ -84,6 +79,16 @@ var Button = (function (_React$Component) {
     key: 'message',
     get: function get() {
       return 'You have clicked ' + this.props.id.replace('-', ' ');
+    }
+  }, {
+    key: 'actionCreator',
+    get: function get() {
+      return new this.actionCreatorType();
+    }
+  }, {
+    key: 'actionCreatorType',
+    get: function get() {
+      return this.props.delay ? _fluxDelayedUpdateMessage2['default'] : _fluxUpdateMessage2['default'];
     }
   }]);
 

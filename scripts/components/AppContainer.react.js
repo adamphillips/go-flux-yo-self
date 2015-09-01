@@ -18,11 +18,12 @@ export default class AppContainer extends React.Component<{}, Props, State> {
           <div className="button-container">
             <Button id="button-1">Button 1</Button>
             <Button id="button-2">Button 2</Button>
-            <Button id="button-3">Button 3</Button>
+            <Button id="button-3" delay="true">Button 3</Button>
           </div>
         </Layer>
         <Layer id="action-creator-layer">
           <ActionCreator id="update-message-action-creator">UpdateMessage Action Creator</ActionCreator>
+          <ActionCreator id="delayed-update-message-action-creator">DelayedUpdateMessage Action Creator</ActionCreator>
         </Layer>
         <Layer id="dispatcher-layer">
           <Dispatcher id="dispatcher">Dispatcher</Dispatcher>
