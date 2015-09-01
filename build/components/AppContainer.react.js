@@ -30,6 +30,10 @@ var _ButtonReact = require('./Button.react');
 
 var _ButtonReact2 = _interopRequireDefault(_ButtonReact);
 
+var _ActionReact = require('./Action.react');
+
+var _ActionReact2 = _interopRequireDefault(_ActionReact);
+
 var _DispatcherReact = require('./Dispatcher.react');
 
 var _DispatcherReact2 = _interopRequireDefault(_DispatcherReact);
@@ -75,6 +79,15 @@ var AppContainer = (function (_React$Component) {
               { id: 'button-3' },
               'Button 3'
             )
+          )
+        ),
+        _react2['default'].createElement(
+          _LayerReact2['default'],
+          { id: 'action-layer' },
+          _react2['default'].createElement(
+            _ActionReact2['default'],
+            { id: 'update-message-action' },
+            'UpdateMessage Action'
           )
         ),
         _react2['default'].createElement(

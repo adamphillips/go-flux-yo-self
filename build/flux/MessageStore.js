@@ -31,10 +31,6 @@ var MessageStore = (function (_ReduceStore) {
     _classCallCheck(this, MessageStore);
 
     _get(Object.getPrototypeOf(MessageStore.prototype), 'constructor', this).apply(this, arguments);
-
-    this.messageForButton = function (id) {
-      return 'You have clicked ' + id.replace('-', ' ');
-    };
   }
 
   _createClass(MessageStore, [{
@@ -46,8 +42,8 @@ var MessageStore = (function (_ReduceStore) {
     key: 'reduce',
     value: function reduce(state, action) {
       switch (action.type) {
-        case _ActionTypes2['default'].BUTTON_CLICKED:
-          state = this.messageForButton(action.id);
+        case _ActionTypes2['default'].MESSAGE_UPDATED:
+          state = action.message;
           return state;
 
         default:

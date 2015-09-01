@@ -8,11 +8,11 @@ var ReduceStore = require('flux/utils').ReduceStore;
 
 export class LoggerStore extends ReduceStore<array> {
   getInitialState(): array {
-    return [new LogEntry('unkown', 'started')];
+    return [];
   }
 
   reduce(state: array, action: Action): array {
-    var entry = new LogEntry(action.id, action.type);
+    var entry = new LogEntry(action.type, action.message);
     var new_state = state.slice(0, 10);
     new_state.unshift(entry);
     return new_state;

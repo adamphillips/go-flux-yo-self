@@ -4,6 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports['default'] = {
-  BUTTON_CLICKED: 'button/clicked'
+  MESSAGE_UPDATED: 'message/updated'
 };
 module.exports = exports['default'];

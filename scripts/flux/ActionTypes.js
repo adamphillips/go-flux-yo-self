@@ -1,3 +1,3 @@
 export default {
-  BUTTON_CLICKED: 'button/clicked'
+  MESSAGE_UPDATED: 'message/updated'
 }

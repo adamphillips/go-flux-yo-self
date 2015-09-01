@@ -1,9 +1,9 @@
 export default class LogEntry {
   type: '';
-  description: '';
+  data: '';
 
-  constructor(type, description) {
+  constructor(type, data) {
     this.type = type;
-    this.description = description;
+    this.data = data;
   }
 }

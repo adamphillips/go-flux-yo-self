@@ -13,17 +13,13 @@ export class MessageStore extends ReduceStore<string> {
 
   reduce(state: string, action: Action): string {
     switch(action.type) {
-      case ActionTypes.BUTTON_CLICKED:
-        state = this.messageForButton(action.id);
+      case ActionTypes.MESSAGE_UPDATED:
+        state = action.message;
         return state;
 
       default:
         return state;
     }
-  }
-
-  messageForButton = (id) => {
-    return 'You have clicked ' + id.replace('-', ' ');
   }
 }
 

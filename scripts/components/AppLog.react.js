@@ -24,7 +24,7 @@ export class AppLog extends React.Component<{}, Props, State> {
       results.push(
         <tr key={x}>
           <td>{entry.type}</td>
-          <td>{entry.description}</td>
+          <td>{entry.data}</td>
         </tr>
       );
     }
@@ -34,8 +34,8 @@ export class AppLog extends React.Component<{}, Props, State> {
         <table>
           <thead>
             <tr>
-              <td>Action</td>
-              <td>Log</td>
+              <td>Type</td>
+              <td>Data</td>
             </tr>
           </thead>
           <tbody>

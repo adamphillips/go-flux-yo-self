@@ -1,0 +1,24 @@
+@import './component.less';
+
+.component__action {
+  .component;
+  background-color: @green;
+  position: relative;
+
+  .action__description {
+    .smaller_text;
+    position: absolute;
+    background-color: fade(@green, 95%);
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    bottom: -100%;
+    border: @spacing solid rgba(0, 0, 0, 0.1);
+    padding: @spacing;
+    display: none;
+  }
+
+  &:hover .action__description {
+    display: block;
+  }
+}

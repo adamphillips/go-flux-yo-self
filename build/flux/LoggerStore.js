@@ -36,12 +36,12 @@ var LoggerStore = (function (_ReduceStore) {
   _createClass(LoggerStore, [{
     key: 'getInitialState',
     value: function getInitialState() {
-      return [new _LogEntry2['default']('unkown', 'started')];
+      return [];
     }
   }, {
     key: 'reduce',
     value: function reduce(state, action) {
-      var entry = new _LogEntry2['default'](action.id, action.type);
+      var entry = new _LogEntry2['default'](action.type, action.message);
       var new_state = state.slice(0, 10);
       new_state.unshift(entry);
       return new_state;

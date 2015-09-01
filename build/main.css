@@ -116,6 +116,29 @@ body {
 .message-bar:hover span.source {
   display: block;
 }
+.component__action {
+  display: inline-block;
+  width: 25%;
+  margin: 20px;
+  padding: 10px;
+  background-color: #00f000;
+  position: relative;
+}
+.component__action .action__description {
+  font-size: 0.8em;
+  position: absolute;
+  background-color: rgba(0, 240, 0, 0.95);
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+}
+.component__action:hover .action__description {
+  display: block;
+}
 .component__dispatcher {
   display: inline-block;
   width: 25%;
@@ -171,6 +194,9 @@ body {
 }
 #view-layer {
   background-color: rgba(217, 62, 48, 0.3);
+}
+#action-layer {
+  background-color: rgba(0, 240, 0, 0.3);
 }
 #dispatcher-layer {
   background-color: rgba(242, 167, 27, 0.3);

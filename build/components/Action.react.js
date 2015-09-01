@@ -18,94 +18,39 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fluxLoggerStore = require('../flux/LoggerStore');
+var Action = (function (_React$Component) {
+  _inherits(Action, _React$Component);
 
-var _fluxLoggerStore2 = _interopRequireDefault(_fluxLoggerStore);
+  function Action() {
+    _classCallCheck(this, Action);
 
-var Container = require('flux/utils').Container;
-
-var AppLog = (function (_React$Component) {
-  _inherits(AppLog, _React$Component);
-
-  function AppLog() {
-    _classCallCheck(this, AppLog);
-
-    _get(Object.getPrototypeOf(AppLog.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Action.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(AppLog, [{
+  _createClass(Action, [{
     key: 'render',
     value: function render() {
-      var results = [];
-      for (var x in this.state.log) {
-        var entry = this.state.log[x];
-        results.push(_react2['default'].createElement(
-          'tr',
-          { key: x },
-          _react2['default'].createElement(
-            'td',
-            null,
-            entry.type
-          ),
-          _react2['default'].createElement(
-            'td',
-            null,
-            entry.data
-          )
-        ));
-      }
-
       return _react2['default'].createElement(
         'div',
-        { id: this.props.id },
+        { id: this.props.id, className: 'component__action' },
+        this.props.children,
         _react2['default'].createElement(
-          'table',
-          null,
+          'p',
+          { className: 'action__description' },
+          'Actions are similar to ',
           _react2['default'].createElement(
-            'thead',
-            null,
-            _react2['default'].createElement(
-              'tr',
-              null,
-              _react2['default'].createElement(
-                'td',
-                null,
-                'Type'
-              ),
-              _react2['default'].createElement(
-                'td',
-                null,
-                'Data'
-              )
-            )
+            'a',
+            { href: '#' },
+            'command objects'
           ),
-          _react2['default'].createElement(
-            'tbody',
-            null,
-            results
-          )
+          '. They instigate a particular command and if this results in a change of state, notify the dispatcher.'
         )
       );
     }
-  }], [{
-    key: 'getStores',
-    value: function getStores() {
-      return [_fluxLoggerStore2['default']];
-    }
-  }, {
-    key: 'calculateState',
-    value: function calculateState(prevState) {
-      console.log('checking state');
-      return {
-        log: _fluxLoggerStore2['default'].getState()
-      };
-    }
   }]);
 
-  return AppLog;
+  return Action;
 })(_react2['default'].Component);
 
-exports.AppLog = AppLog;
-
-var contained = Container.create(AppLog);
-exports['default'] = contained;
+exports['default'] = Action;
+module.exports = exports['default'];

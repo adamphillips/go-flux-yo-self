@@ -18,9 +18,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fluxClickedButton = require('../flux/ClickedButton');
+var _fluxUpdateMessage = require('../flux/UpdateMessage');
 
-var _fluxClickedButton2 = _interopRequireDefault(_fluxClickedButton);
+var _fluxUpdateMessage2 = _interopRequireDefault(_fluxUpdateMessage);
 
 var Button = (function (_React$Component) {
   _inherits(Button, _React$Component);
@@ -33,7 +33,8 @@ var Button = (function (_React$Component) {
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
     this.onButtonClick = function () {
-      new _fluxClickedButton2['default'](_this.props.id).click();
+      var updater = new _fluxUpdateMessage2['default']();
+      updater.run(_this.message);
     };
   }
 
@@ -56,18 +57,29 @@ var Button = (function (_React$Component) {
           ' ActionCreator. This in turn ',
           _react2['default'].createElement(
             'a',
-            null,
-            'creates and dispatches'
+            { href: '#' },
+            'creates and runs'
           ),
-          ' the action.',
+          ' and instance of the ',
           _react2['default'].createElement(
             'a',
-            null,
+            { href: '#' },
+            'UpdateMessage action'
+          ),
+          '.',
+          _react2['default'].createElement(
+            'a',
+            { href: '#' },
             'The action'
           ),
-          ' contains a type and id but could contain any other relevant information.'
+          ' contains a type and message but could contain any other relevant information.'
         )
       );
+    }
+  }, {
+    key: 'message',
+    get: function get() {
+      return 'You have clicked ' + this.props.id.replace('-', ' ');
     }
   }]);
 
