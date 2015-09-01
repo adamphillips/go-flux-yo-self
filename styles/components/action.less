@@ -1,11 +1,11 @@
 @import './component.less';
 
-.component__action {
+.component__action_creator {
   .component;
   background-color: @green;
   position: relative;
 
-  .action__description {
+  .action_creator__description {
     .smaller_text;
     position: absolute;
     background-color: fade(@green, 95%);
@@ -18,7 +18,7 @@
     display: none;
   }
 
-  &:hover .action__description {
+  &:hover .action_creator__description {
     display: block;
   }
 }

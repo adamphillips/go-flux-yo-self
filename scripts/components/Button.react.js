@@ -3,6 +3,7 @@
 import React from 'react';
 
 import UpdateMessage from '../flux/UpdateMessage';
+import DelayedUpdateMessage from '../flux/DelayedUpdateMessage';
 
 export default class Button extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
@@ -19,7 +20,7 @@ export default class Button extends React.Component<{}, Props, State> {
   }
 
   onButtonClick = () => {
-    var updater = new UpdateMessage();
+    var updater = new DelayedUpdateMessage();
     updater.run(this.message);
   }
 

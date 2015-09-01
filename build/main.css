@@ -116,7 +116,7 @@ body {
 .message-bar:hover span.source {
   display: block;
 }
-.component__action {
+.component__action_creator {
   display: inline-block;
   width: 25%;
   margin: 20px;
@@ -124,7 +124,7 @@ body {
   background-color: #00f000;
   position: relative;
 }
-.component__action .action__description {
+.component__action_creator .action_creator__description {
   font-size: 0.8em;
   position: absolute;
   background-color: rgba(0, 240, 0, 0.95);
@@ -136,7 +136,7 @@ body {
   padding: 12px;
   display: none;
 }
-.component__action:hover .action__description {
+.component__action_creator:hover .action_creator__description {
   display: block;
 }
 .component__dispatcher {
@@ -195,7 +195,7 @@ body {
 #view-layer {
   background-color: rgba(217, 62, 48, 0.3);
 }
-#action-layer {
+#action-creator-layer {
   background-color: rgba(0, 240, 0, 0.3);
 }
 #dispatcher-layer {

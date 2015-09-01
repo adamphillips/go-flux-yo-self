@@ -18,25 +18,25 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Action = (function (_React$Component) {
-  _inherits(Action, _React$Component);
+var ActionCreator = (function (_React$Component) {
+  _inherits(ActionCreator, _React$Component);
 
-  function Action() {
-    _classCallCheck(this, Action);
+  function ActionCreator() {
+    _classCallCheck(this, ActionCreator);
 
-    _get(Object.getPrototypeOf(Action.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(ActionCreator.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(Action, [{
+  _createClass(ActionCreator, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(
         'div',
-        { id: this.props.id, className: 'component__action' },
+        { id: this.props.id, className: 'component__action_creator' },
         this.props.children,
         _react2['default'].createElement(
           'p',
-          { className: 'action__description' },
+          { className: 'action_creator__description' },
           'Actions are similar to ',
           _react2['default'].createElement(
             'a',
@@ -49,8 +49,8 @@ var Action = (function (_React$Component) {
     }
   }]);
 
-  return Action;
+  return ActionCreator;
 })(_react2['default'].Component);
 
-exports['default'] = Action;
+exports['default'] = ActionCreator;
 module.exports = exports['default'];

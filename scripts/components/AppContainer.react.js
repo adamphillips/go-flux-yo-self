@@ -5,7 +5,7 @@ import React from 'react';
 import Layer from './Layer.react';
 import MessageBar from './MessageBar.react';
 import Button from './Button.react';
-import Action from './Action.react';
+import ActionCreator from './ActionCreator.react';
 import Dispatcher from './Dispatcher.react';
 import Store from './Store.react';
 
@@ -21,8 +21,8 @@ export default class AppContainer extends React.Component<{}, Props, State> {
             <Button id="button-3">Button 3</Button>
           </div>
         </Layer>
-        <Layer id="action-layer">
-          <Action id="update-message-action">UpdateMessage Action</Action>
+        <Layer id="action-creator-layer">
+          <ActionCreator id="update-message-action-creator">UpdateMessage Action Creator</ActionCreator>
         </Layer>
         <Layer id="dispatcher-layer">
           <Dispatcher id="dispatcher">Dispatcher</Dispatcher>

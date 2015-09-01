@@ -22,6 +22,10 @@ var _fluxUpdateMessage = require('../flux/UpdateMessage');
 
 var _fluxUpdateMessage2 = _interopRequireDefault(_fluxUpdateMessage);
 
+var _fluxDelayedUpdateMessage = require('../flux/DelayedUpdateMessage');
+
+var _fluxDelayedUpdateMessage2 = _interopRequireDefault(_fluxDelayedUpdateMessage);
+
 var Button = (function (_React$Component) {
   _inherits(Button, _React$Component);
 
@@ -33,7 +37,7 @@ var Button = (function (_React$Component) {
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
     this.onButtonClick = function () {
-      var updater = new _fluxUpdateMessage2['default']();
+      var updater = new _fluxDelayedUpdateMessage2['default']();
       updater.run(_this.message);
     };
   }
