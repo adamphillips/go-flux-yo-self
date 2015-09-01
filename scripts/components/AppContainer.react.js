@@ -28,14 +28,14 @@ export default class AppContainer extends React.Component<{}, Props, State> {
             Message Store
             <p className="store__description">
               The MessageStore contains the message to be displayed in the bar at top.
-              The MessageBar React component <a>registers its state</a> as being bound to the MessageStore.
+              The MessageBar React component <a href="#">registers its state</a> as being bound to the MessageStore.
             </p>
           </Store>
           <Store id="logger-store">LoggerStore
             <p className="store__description">
               The LoggerStore contains the log of the last 10 actions.
               This is the source used for the data table.
-              The AppLog React component <a>registers its state</a> as being bound to the LoggerStore.
+              The AppLog React component <a href="#">registers its state</a> as being bound to the LoggerStore.
             </p>
           </Store>
         </Layer>
