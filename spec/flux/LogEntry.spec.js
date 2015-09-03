@@ -1,4 +1,4 @@
-var LogEntry = require('../../scripts/flux/LogEntry');
+import LogEntry from '../../scripts/flux/LogEntry';
 
 describe('LogEntry', function () {
   it('should have a type and data', function() {
