@@ -36,7 +36,7 @@ var MessageStore = (function (_ReduceStore) {
   _createClass(MessageStore, [{
     key: 'getInitialState',
     value: function getInitialState() {
-      return 'Test message';
+      return 'The message will appear here';
     }
   }, {
     key: 'reduce',

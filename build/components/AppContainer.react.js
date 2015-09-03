@@ -118,13 +118,7 @@ var AppContainer = (function (_React$Component) {
             _react2['default'].createElement(
               'p',
               { className: 'store__description' },
-              'The MessageStore contains the message to be displayed in the bar at top. The MessageBar React component ',
-              _react2['default'].createElement(
-                'a',
-                { href: '#' },
-                'registers its state'
-              ),
-              ' as being bound to the MessageStore.',
+              'The MessageStore contains the message to be displayed in the bar at top. The MessageBar React component as being bound to the MessageStore.',
               _react2['default'].createElement(
                 _SourceLinkReact2['default'],
                 { filename: 'MessageStore.js' },
@@ -139,13 +133,12 @@ var AppContainer = (function (_React$Component) {
             _react2['default'].createElement(
               'p',
               { className: 'store__description' },
-              'The LoggerStore contains the log of the last 10 actions. This is the source used for the data table. The AppLog React component ',
+              'The LoggerStore contains the log of the last 10 actions. This is the source used for the data table. The AppLog React component as being bound to the LoggerStore.',
               _react2['default'].createElement(
-                'a',
-                { href: '#' },
-                'registers its state'
-              ),
-              ' as being bound to the LoggerStore.'
+                _SourceLinkReact2['default'],
+                { filename: 'LoggerStore.js' },
+                'View on Github'
+              )
             )
           )
         )

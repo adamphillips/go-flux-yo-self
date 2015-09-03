@@ -44,6 +44,7 @@ var Button = (function (_React$Component) {
   _createClass(Button, [{
     key: 'render',
     value: function render() {
+      debugger;
       return _react2['default'].createElement(
         'button',
         { id: this.props.id, className: 'button component__view', onClick: this.onButtonClick },
@@ -51,27 +52,9 @@ var Button = (function (_React$Component) {
         _react2['default'].createElement(
           'p',
           { className: 'button__description' },
-          'When clicked, each button will create an instance of the ',
-          this.actionCreatorType,
-          ' ActionCreator. This in turn ',
-          _react2['default'].createElement(
-            'a',
-            { href: '#' },
-            'creates and runs'
-          ),
-          ' and instance of the ',
-          _react2['default'].createElement(
-            'a',
-            { href: '#' },
-            'UpdateMessage action'
-          ),
-          '.',
-          _react2['default'].createElement(
-            'a',
-            { href: '#' },
-            'The action'
-          ),
-          ' contains a type and message but could contain any other relevant information.'
+          'When clicked, this button will create an instance of an ActionCreator. It will use this to set the message to ',
+          this.message,
+          '.'
         )
       );
     }

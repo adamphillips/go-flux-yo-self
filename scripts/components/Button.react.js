@@ -7,13 +7,13 @@ import DelayedUpdateMessage from '../flux/DelayedUpdateMessage';
 
 export default class Button extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
+    debugger;
     return (
       <button id={this.props.id} className="button component__view" onClick={this.onButtonClick}>
         {this.props.children}
         <p className="button__description">
-          When clicked, each button will create an instance of the {this.actionCreatorType} ActionCreator.
-          This in turn <a href="#">creates and runs</a> and instance of the <a href="#">UpdateMessage action</a>.
-          <a href="#">The action</a> contains a type and message but could contain any other relevant information.
+          When clicked, this button will create an instance of an ActionCreator.
+          It will use this to set the message to {this.message}.
         </p>
       </button>
     )

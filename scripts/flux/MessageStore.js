@@ -8,7 +8,7 @@ var ReduceStore = require('flux/utils').ReduceStore;
 
 export class MessageStore extends ReduceStore<string> {
   getInitialState(): string {
-    return 'Test message';
+    return 'The message will appear here';
   }
 
   reduce(state: string, action: Action): string {

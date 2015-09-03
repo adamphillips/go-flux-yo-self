@@ -163,6 +163,11 @@ body {
 .component__dispatcher:hover .dispatcher__description {
   display: block;
 }
+.source-link {
+  display: block;
+  clear: both;
+  margin-top: 6px;
+}
 .component__store {
   display: inline-block;
   width: 25%;
