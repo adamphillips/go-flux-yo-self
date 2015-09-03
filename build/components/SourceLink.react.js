@@ -18,40 +18,35 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var View = (function (_React$Component) {
-  _inherits(View, _React$Component);
+var sourceRoot = 'https://github.com/adamphillips/go-flux-yo-self/blob/master/scripts/flux/';
 
-  function View() {
-    _classCallCheck(this, View);
+var SourceLink = (function (_React$Component) {
+  _inherits(SourceLink, _React$Component);
 
-    _get(Object.getPrototypeOf(View.prototype), 'constructor', this).apply(this, arguments);
+  function SourceLink() {
+    _classCallCheck(this, SourceLink);
+
+    _get(Object.getPrototypeOf(SourceLink.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(View, [{
+  _createClass(SourceLink, [{
     key: 'render',
     value: function render() {
-      debugger;
       return _react2['default'].createElement(
-        'div',
-        null,
-        _react2['default'].createElement(
-          'p',
-          null,
-          '-- #',
-          this.props
-        ),
-        _react2['default'].createElement(
-          'p',
-          null,
-          '#',
-          this.state
-        )
+        'a',
+        { id: this.props.id, className: 'source-link', href: this.url },
+        this.props.children
       );
+    }
+  }, {
+    key: 'url',
+    get: function get() {
+      return sourceRoot + this.props.filename;
     }
   }]);
 
-  return View;
+  return SourceLink;
 })(_react2['default'].Component);
 
-exports['default'] = View;
+exports['default'] = SourceLink;
 module.exports = exports['default'];

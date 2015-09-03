@@ -8,6 +8,7 @@ import Button from './Button.react';
 import ActionCreator from './ActionCreator.react';
 import Dispatcher from './Dispatcher.react';
 import Store from './Store.react';
+import SourceLink from './SourceLink.react';
 
 export default class AppContainer extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
@@ -34,6 +35,7 @@ export default class AppContainer extends React.Component<{}, Props, State> {
             <p className="store__description">
               The MessageStore contains the message to be displayed in the bar at top.
               The MessageBar React component <a href="#">registers its state</a> as being bound to the MessageStore.
+              <SourceLink filename="MessageStore.js">View on Github</SourceLink>
             </p>
           </Store>
           <Store id="logger-store">LoggerStore

@@ -42,6 +42,10 @@ var _StoreReact = require('./Store.react');
 
 var _StoreReact2 = _interopRequireDefault(_StoreReact);
 
+var _SourceLinkReact = require('./SourceLink.react');
+
+var _SourceLinkReact2 = _interopRequireDefault(_SourceLinkReact);
+
 var AppContainer = (function (_React$Component) {
   _inherits(AppContainer, _React$Component);
 
@@ -120,7 +124,12 @@ var AppContainer = (function (_React$Component) {
                 { href: '#' },
                 'registers its state'
               ),
-              ' as being bound to the MessageStore.'
+              ' as being bound to the MessageStore.',
+              _react2['default'].createElement(
+                _SourceLinkReact2['default'],
+                { filename: 'MessageStore.js' },
+                'View on Github'
+              )
             )
           ),
           _react2['default'].createElement(

@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-// var React = require('react');
 
 export default class View extends React.Component<{}, Props, State> {
   render() : ?ReactElement {
