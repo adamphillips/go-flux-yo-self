@@ -5,6 +5,8 @@ var babel = require('babel');
 var map = require('vinyl-map');
 var jetpack = require('fs-jetpack');
 
+require('./clean');
+
 var projectDir = jetpack;
 var destDir = projectDir.cwd('./build');
 
