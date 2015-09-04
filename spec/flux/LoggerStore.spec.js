@@ -2,7 +2,7 @@
 
 import LoggerStore from '../../scripts/flux/LoggerStore';
 
-describe('LogEntry', function () {
+describe('LoggerStore', function () {
   describe('when an action is dispatched', function() {
     it('should add a log entry to the top of the list', function() {
       var newState = LoggerStore.reduce(['existing-entry'], {type: 'some-type', message: 'some-message'});
