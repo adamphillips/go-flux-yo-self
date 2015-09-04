@@ -42,7 +42,7 @@ var LoggerStore = (function (_ReduceStore) {
     key: 'reduce',
     value: function reduce(state, action) {
       var entry = new _LogEntry2['default'](action.type, action.message);
-      var new_state = state.slice(0, 10);
+      var new_state = state.slice(0, 9);
       new_state.unshift(entry);
       return new_state;
     }

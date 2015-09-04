@@ -13,7 +13,7 @@ export class LoggerStore extends ReduceStore<array> {
 
   reduce(state: array, action: Action): array {
     var entry = new LogEntry(action.type, action.message);
-    var new_state = state.slice(0, 10);
+    var new_state = state.slice(0, 9);
     new_state.unshift(entry);
     return new_state;
   }
